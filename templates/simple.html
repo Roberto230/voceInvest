@@ -1,0 +1,90 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+
+<div class="jumbotron jumbtron-fluid" style="margin-top: 40px; max-height: 200px;">
+    <div class="container">
+        <h1 class="display-8">Simulador</h1>
+        <p class="lead">Simule o seu investimento</p>
+    </div>
+</div>
+
+<form class="container p-3" action="{{ url_for('get_tiker') }}" method="post">
+    <div class="row">
+        <div class="row col-lg-6 mr-1">
+            <div class="col-lg-12">
+                <p>Quantos você tem para investir?</p>
+                <div class="row col-lg-12  mt-3">
+                    <input type="number" name="totalInvestment" class="form-control"  placeholder="Ex: 30, 250, 1000..." required>
+                </div>
+                <div class="row col-lg-12 mt-3 mb-3 ">
+                    <input type="submit" class="btn btn-primary " value="Calcular">
+                </div>
+            </div>
+        </div>
+        <div class="row col-lg-6">
+            <div class="col-lg-12">
+                <p>Resultado</p>
+                <div class="border border-top-0 p-3  rounded">
+                    {{result}}
+                </div>               
+            </div>
+            <div class="col-lg-12 mt-3">
+                <p class="alert {{color}}">{{note}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row col-lg-12 mb-3 mt-4"> Quais são seus ativos?</div>
+    <div class="row">
+        <div class="row col-lg-3 col-md-3  col-sm-4  mt-1">
+            <label for="ITSA4" class="col-lg-6 col-sm-7 mt-1">ITSA4</label>
+            <input type="checkbox" class="form-control col-lg-2 col-sm-3 ml-1" value="ITSA4" name="assets" id="ITSA4" checked >
+        </div>
+        <div class="row col-lg-3 col-md-3  col-sm-4 mt-1">
+            <label for="B3SA3"class="col-lg-6 col-sm-7 mt-1">B3SA3</label>
+            <input type="checkbox" class="form-control col-lg-2 col-sm-3 ml-1" name="assets" id="B3SA3" value="B3SA3" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4   mt-1">
+            <label for="ITUB3"class="col-lg-6  col-sm-7  mt-1    ">ITUB3</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="ITUB3" value="ITUB3" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="BMGB4"class="col-lg-6  col-sm-7  mt-1    ">BMGB4</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="BMGB4" value="BMGB4" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="WEGE3"class="col-lg-6  col-sm-7  mt-1    ">WEGE3</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="WEGE3" value="WEGE3" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="NINJ3"class="col-lg-6  col-sm-7  mt-1    ">NINJ3</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="NINJ3" value="NINJ3" >
+        </div>
+
+        <div class="row col-lg-3 col-md-3 col-sm-4   mt-1">
+            <label for="EMBR3"class="col-lg-6  col-sm-7  mt-1    ">EMBR3</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="EMBR3" value="EMBR3" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="B3SA3"class="col-lg-6  col-sm-7  mt-1    ">B3SA3</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="B3SA3" value="B3SA3" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="NUBR34"class="col-lg-6  col-sm-7  mt-1   ">NUBR34</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="NUBR34" value="NUBR34" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="MXRF11"class="col-lg-6  col-sm-7  mt-1   ">MXRF11</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1" name="assets" id="MXRF11" value="MXRF11" >
+        </div>
+        <div class="row col-lg-3 col-md-3 col-sm-4  mt-1">
+            <label for="HASH11"class="col-lg-6  col-sm-7  mt-1">HASH11</label>
+            <input type="checkbox" class="form-control col-lg-2  col-sm-3 ml-1 input-group-text" name="assets" id="HASH11" value="HASH11" >
+        </div>
+    </div>
+    
+    
+</form>
+
+{% endblock %}
